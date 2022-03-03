@@ -1,0 +1,11 @@
+1. SDK 로드
+
+2. SDK INIT(초기화)
+
+3. Login		<- 로그인 기능
+
+4. Logout		<- 로그아웃 기능
+
+5. isLogined 	<- 로그인 되어 있는가
+
+6. API		<- API를 어떻게 호출하는가
