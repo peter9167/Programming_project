@@ -9,8 +9,12 @@
 <body>
     <script>
         function setup() {
-            createCanvas(400, 800);
-            background('gray');
+            createCanvas(windowWidth, windowHeight);
+            background(220);
+        }
+
+        function draw() {
+            circle(mouseX, mouseY, 100);
         }
     </script>
 </body>
