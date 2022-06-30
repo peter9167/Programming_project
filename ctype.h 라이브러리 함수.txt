@@ -1,0 +1,40 @@
+[#include<ctype.h>]
+#include<ctype.h> 를 했을때 사용가능한 함수 목록이다.
+
+c 문자 분류로써 문자들에 관련된 함수들이 들어있다.
+
+#문자 검사 함수#
+
+
+int isalnum(int c) : c가 알파벳 또는 숫자이면 0이 아닌 값을 반환
+
+int isalpha(int c) : c가 알파벳이면 0이 아닌 값을 반환
+
+int iscntrl(int c) : c가 제어 문자이면 0이 아닌 값을 반환
+
+int isdigit(int c) : c가 숫자이면 0이 아닌값을 반환
+
+int isgraph(int c) : c가 그래픽 문자이면 0이 아닌 값을 반환
+
+int islower(int c) : c가 소문자이면 0이 아닌 값을 반환
+
+int isprint(int c) : c가 출력할 수 있는 문자이면 0이 아닌 값을 반환
+
+int ispunct(int c) : c가 구두점 문자이면 0이 아닌 값을 반환
+
+int isspace(int c) : c가 공백 문자이면 0이 아닌 값을 반환
+
+int isupper(int c) : c가 대문자이면 0이 아닌 값을 반환
+
+int isxdigit(int c) : c가 16진 숫자이면 0이 아닌 값을 반환
+
+
+#문자 변환 함수#
+
+int tolower(int c) : c를 소문자로 변환
+
+int toupper(int c) : c를 대문자로 변환
+
+int _toascii(int c) : c를 아스키 코드로 변환
+
+
