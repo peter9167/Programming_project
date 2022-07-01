@@ -1,4 +1,4 @@
-[ ] 연산자의 역할
+[ ] 연산자(첨자 연산자)의 역할
 
 연산의 우선순위 : http://www.tcpschool.com/codingmath/priority
 
