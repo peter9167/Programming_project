@@ -1,0 +1,14 @@
+함수의 이해
+
+사용자 정의 함수 개념
+호출 -> 동작 -> 되돌아감
+
+- 함수 호출하는 4가지 방법
+___________________
+호출 	동작 	반환
+ O	 O	int sum(int, int)
+ O	 X	void sum(int, int)
+ X	 O	int sum(void)
+ X	 X	void sum(void)
+
+
