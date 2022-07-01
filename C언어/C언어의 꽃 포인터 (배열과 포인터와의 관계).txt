@@ -1,0 +1,20 @@
+배열은 배열이고 포인터는 포인터이다.
+
+ int arr[6] = {1, 2, 3, 4, 5, 6};
+ int* parr = arr;
+
+ printf("Sizeof(arr) : %d \n", sizeof(arr));	결과 : Sizeof(arr) : 24 
+ printf("Sizeof(parr) : %d \n", sizeof(parr));	결과 : Sizeof(parr) : 8 
+
+- 여기서 당연히 포인터 크기가 8byte 가 될 줄 알았지만 아래 설명을 통해 왜 이런지 확인
+
+- sizeof 를 arr 자체에 그대로 썼을 경우 배열의 실제 크기 출력
+  arr 배열에는 int 원소 6 개가 있으므로 크기가 24 이다.
+
+- parr 에 sizeof 연산자를 사용하였을 경우 배열의 자체의 크기가 아니라 그냥 포인터의 크기 출력
+
+- arr 이 sizeof 랑도, 주소값 연산자랑도 사용되지 않았기에, 
+  arr 은 첫 번째 원소를 가리키는 포인터로 타입 변환되었기에, parr과 &arr[0] 일치
+
+
+
