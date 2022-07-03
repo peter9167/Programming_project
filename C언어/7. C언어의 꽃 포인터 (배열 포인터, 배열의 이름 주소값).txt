@@ -19,12 +19,11 @@ int **p;
 
 --------------------------------------
 int *numPtr1;     	// 단일 포인터 선언
-    int **numPtr2;    	// 이중 포인터 선언
-    int num1 = 10;
+int **numPtr2;    	// 이중 포인터 선언
+int num1 = 10;
 
-    numPtr1 = &num1;   	// num1의 메모리 주소 저장 
-
-    numPtr2 = &numPtr1;
+numPtr1 = &num1;   	// num1의 메모리 주소 저장 
+numPtr2 = &numPtr1;
 --------------------------------------
 
 포인터도 실제로는 변수이기 때문에 메모리 주소를 구할 수 있다. 
@@ -47,10 +46,10 @@ numPtr1의 메모리 주소    num1의 메모리 주소          10
 
 --------------------------------------
 int arr[3] = {1, 2, 3};
-  int (*parr)[3] = &arr;
+int (*parr)[3] = &arr;
 
-  printf("arr[1] : %d \n", arr[1]);		결과 : arr[1] : 2 
-  printf("parr[1] : %d \n", (*parr)[1]);	결과 : parr[1] : 2 
+printf("arr[1] : %d \n", arr[1]);		결과 : arr[1] : 2 
+printf("parr[1] : %d \n", (*parr)[1]);	결과 : parr[1] : 2 
 --------------------------------------
 
 - int (*parr)[3] = &arr; 에서 &arr은 무슨 의미일까? 
