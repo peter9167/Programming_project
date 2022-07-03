@@ -27,7 +27,7 @@ int swap(int *a, int *b) {
   *a = *b;
   *b = temp;
   return 0;
-}
+} 
 int main() {
   int i, j;
   i = 3;
