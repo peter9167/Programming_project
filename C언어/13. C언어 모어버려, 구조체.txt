@@ -1,0 +1,151 @@
+구조체란?
+
+- 구조체(structure type)란 사용자가 C언어의 기본 타입을 가지고 새롭게 정의할 수 있는 사용자 정의 타입이다.
+
+- 구조체는 기본 타입만으로는 나타낼 수 없는 복잡한 데이터를 표현할 수 있다.
+
+- 배열이 같은 타입의 변수 집합이라고 한다면, 구조체는 다양한 타입의 변수 집합을 하나의 타입으로 나타낸 것이다.
+
+- 이때 구조체를 구성하는 변수를 구조체의 멤버(member) 또는 멤버 변수(member variable)라고 한다.
+
+
+
+
+구조체의 정의와 선언
+C언어에서 구조체는 struct 키워드를 사용하여 다음과 같이 정의한다.
+
+문법
+---
+
+키워드 구조체 이름
+ ↓      ↓
+struct book
+
+{
+    char title[30]; // 멤버변수1의타입 멤버변수1의이름;
+
+    char author[30]; // 멤버변수2의타입 멤버변수2의이름;
+} my_book; ← 구조체 변수이름
+
+
+- 정의된 book 구조체는 사용자 정의 자료형이라고 한다.
+- 정의된 구조체 타입은 다음과 같이 구조체 변수로 선언하여 사용
+
+
+예제1
+----------------------------------
+#include <stdio.h>
+struct Human {
+  int age;    /* 나이 */
+  int height; /* 키 */
+  int weight; /* 몸무게 */
+};            /* ; 붙이는 것 주의하세요 */
+int main() {
+  struct Human Psi;	// Human 이라는 구조체의 구조체 변수 Psi 를 정의
+
+  Psi.age = 99;
+  Psi.height = 185;
+  Psi.weight = 80;
+  // 위 작업은 Psi 라는 구조체의 각 멤버에 값을 대입하는 것이다. 
+
+  printf("Psi 에 대한 정보 \n");
+  printf("나이   : %d \n", Psi.age);	// 결과 : 나이   : 99 
+  printf("키     : %d \n", Psi.height);	// 결과 : 키     : 185 
+  printf("몸무게 : %d \n", Psi.weight);	// 결과 : 몸무게 : 80 
+  return 0;
+}
+----------------------------------
+
+
+
+
+예제2
+----
+#include <stdio.h>
+
+char copy_str(char *dest, const char *src);
+
+struct Books {
+  /* 책 이름 */
+  char name[30];
+  /* 저자 이름 */
+  char auth[30];
+  /* 출판사 이름 */
+  char publ[30];
+  /* 빌려 졌나요? */
+  int borrowed;
+};
+
+int main() {
+  struct Books Harry_Potter;
+
+  copy_str(Harry_Potter.name, "Harry Potter");
+  copy_str(Harry_Potter.auth, "J.K. Rolling");
+  copy_str(Harry_Potter.publ, "Scholastic");	
+  Harry_Potter.borrowed = 0;			// 도서 대출 여부 초기화 0
+
+  printf("책 이름 : %s \n", Harry_Potter.name);	// 결과 : 책 이름 : Harry Potter 
+  printf("저자 이름 : %s \n", Harry_Potter.auth);	// 결과 : 저자 이름 : J.K. Rolling 
+  printf("출판사 이름 : %s \n", Harry_Potter.publ); // 결과 : 출판사 이름 : Scholastic 
+
+  return 0;
+}
+
+char copy_str(char *dest, const char *src) {
+  while (*src) {
+    *dest = *src; // Harry_Potter 구조체 객체에 전달된 문자열 대입
+    src++;
+    dest++;
+  }
+
+  *dest = '\0';
+
+  return 1;
+}
+
+
+
+
+예제3
+----
+#include <stdio.h>
+
+char copy_str(char *dest, const char *src);
+
+struct Books {
+  /* 책 이름 */
+  char name[30];
+  /* 저자 이름 */
+  char auth[30];
+  /* 출판사 이름 */
+  char publ[30];
+  /* 빌려 졌나요? */
+  int borrowed;
+};
+
+int main() {
+  struct Books Harry_Potter;
+
+  copy_str(Harry_Potter.name, "Harry Potter");
+  copy_str(Harry_Potter.auth, "J.K. Rolling");
+  copy_str(Harry_Potter.publ, "Scholastic");
+  Harry_Potter.borrowed = 0;
+
+  printf("책 이름 : %s \n", Harry_Potter.name);
+  printf("저자 이름 : %s \n", Harry_Potter.auth);
+  printf("출판사 이름 : %s \n", Harry_Potter.publ);
+
+  return 0;
+}
+
+char copy_str(char *dest, const char *src) {
+  while (*src) {
+    *dest = *src;
+    src++;
+    dest++;
+  }
+
+  *dest = '\0';
+
+  return 1;
+}
