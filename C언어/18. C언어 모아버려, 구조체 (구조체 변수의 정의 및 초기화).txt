@@ -1,0 +1,98 @@
+구조체 변수의 정의 방법
+
+---------------------------------------------------------------
+구조체 변수를 다음과 같이 정의하여 사용하였다. 
+
+struct Anomynous Var1,
+    Var2;  // "struct Anomynous" 형의 변수 Var1 , Var2 를 정의한다.
+---------------------------------------------------------------
+
+구조체 변수를 정의하는 방법 중 전역 변수로 선언하는 방법
+
+#include <stdio.h>
+
+char copy_str(char *dest, char *src);
+
+int Print_Obj_Status();
+
+struct obj {	// sturct obj 라는 구조체를 정의하였고
+		// 멤버는 아래와 같다.
+  char name[20];
+  int x, y;
+} Ball; 	// sturct obj 형의 Ball 이란 구조체 변수를 정의하며, 전역 변수
+
+int main() {
+  Ball.x = 3;
+  Ball.y = 4;
+  copy_str(Ball.name, "RED BALL");
+
+  Print_Obj_Status(Ball);
+
+  return 0;
+}
+
+int Print_Obj_Status() {
+  printf("Location of %s \n", Ball.name);
+  printf("( %d , %d ) \n", Ball.x, Ball.y);
+
+  return 0;
+}
+
+char copy_str(char *dest, char *src) {
+  while (*src) {
+    *dest = *src;
+    src++;
+    dest++;
+  }
+
+  *dest = '\0';
+
+  return 1;
+}
+
+
+
+
+
+
+-----------------------------------
+구조체 멤버를 쉽게 초기화 하기
+
+#include <stdio.h>
+int Print_Status(struct HUMAN human);
+struct HUMAN {
+  // HUMAN 구조체는 아래와 같이 4 개의 int 형 멤버들을 가지고 있다.
+  int age;
+  int height;
+  int weight;
+  int gender;
+};
+
+int main() {
+  struct HUMAN Adam = {31, 182, 75, 0};
+  struct HUMAN Eve = {27, 166, 48, 1};
+
+  Print_Status(Adam);
+  Print_Status(Eve);
+}
+
+int Print_Status(struct HUMAN human) {
+  if (human.gender == 0) {
+    printf("MALE \n");
+  } else {
+    printf("FEMALE \n");
+  }
+
+  printf("AGE : %d / Height : %d / Weight : %d \n", human.age, human.height,
+         human.weight);
+
+  if (human.gender == 0 && human.height >= 180) {
+    printf("HE IS A WINNER!! \n");
+  } else if (human.gender == 0 && human.height < 180) {
+    printf("HE IS A LOSER!! \n");
+  }
+
+  printf("------------------------------------------- \n");
+
+  return 0;
+}
