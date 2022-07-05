@@ -44,18 +44,71 @@ int main() {
 
 
 
+구조체 포인터에 아름다운 대입 연산자 '->'
+
+예제2
+----
+#include <stdio.h>
+
+struct test {
+  int a, b;
+};
+
+int main() {
+  struct test st;
+  struct test *ptr;
+  
+  ptr = &st;
+  
+  ptr->a = 1;
+  ptr->b = 2;
+  /* 위와 같이 (*ptr).a = 1 이라는 문장을 ptr->a = 1 로 간단히 표현할 수 있다. 
+     아래 ptr->b = 2 역시 (*ptr).b = 2 와 정확히 일치하는 문장이다. 
+     단순히 사용자의 편의를 위해서 -> 라는 새로운 기호를 도입한 것이다. 
+     (이 기호는 위의 우선 순위 표 맨 위에서도 볼 수 있습니다)
+  */
+  
+  printf("st 의 a 멤버 : %d \n", st.a);
+  printf("st 의 b 멤버 : %d \n", st.b);
+  
+  return 0;
+}
 
 
 
 
+예제3
+----
+#include <stdio.h>
 
+struct TEST {
+  int c;
+  int *pointer;
+};
 
+int main() {
+  struct TEST t;
+  struct TEST *pt = &t;
+  int i = 0;
 
+  /* t 의 멤버 pointer 는 i 를 가리키게 된다*/
+  t.pointer = &i;
 
+  /* t 의 멤버 pointer 가 가리키는 변수의 값을 3 으로 만든다*/
+  *t.pointer = 3;
 
+  printf("i : %d \n", i);
 
+  /*
 
+  -> 가 * 보다 우선순위가 높으므로 먼저 해석하게 된다.
+  즉,
+  (pt 가 가리키는 구조체 변수의 pointer 멤버) 가 가리키는 변수의 값을 4 로
+  바꾼다. 라는 뜻이다/
 
+  */
+  *pt->pointer = 4;
 
-
-
+  printf("i : %d \n", i);
+  return 0;
+}
