@@ -16,7 +16,7 @@ int main() {
   int i;
 
   for (i = 0; i < 3; i++) {
-    printf("책 %d 정보 입력 : ", i);
+    printf("책 %d 정보 입력 (책 이름, 저자 이름, 출판사 이름) : ", i);
     scanf("%s%s%s", book_list[i].name, book_list[i].auth, book_list[i].publ);
     book_list[i].borrowed = 0;
   }
