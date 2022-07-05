@@ -59,7 +59,9 @@ char copy_str(char *dest, char *src) {
 구조체 멤버를 쉽게 초기화 하기
 
 #include <stdio.h>
+
 int Print_Status(struct HUMAN human);
+
 struct HUMAN {
   // HUMAN 구조체는 아래와 같이 4 개의 int 형 멤버들을 가지고 있다.
   int age;
@@ -69,7 +71,8 @@ struct HUMAN {
 };
 
 int main() {
-  struct HUMAN Adam = {31, 182, 75, 0};
+  struct HUMAN Adam = {31, 182, 75, 0}; // main 내부에서 위와 같이 Adam 과 Eve 를 정의하여 = {} 를 통해서 
+                                        // 중괄호 내부의 정보들이 순차적으로 각 멤버에 대입
   struct HUMAN Eve = {27, 166, 48, 1};
 
   Print_Status(Adam);
@@ -96,3 +99,20 @@ int Print_Status(struct HUMAN human) {
 
   return 0;
 }
+
+
+-----------------------
+
+struct obj {
+  char name[20];
+  int x, y;
+} Ball;
+
+와 같이 전역 변수로 선언하였을 때는 아래와 같이 선언하면 된다. 
+
+struct obj {
+  char name[20];
+  int x, y;
+} Ball = {"abc", 10, 2};
+
+
