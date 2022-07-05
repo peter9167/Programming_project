@@ -1,0 +1,50 @@
+구조체 변수의 정의 방법
+
+---------------------------------------------------------------
+구조체 변수를 다음과 같이 정의하여 사용하였다. 
+
+struct Anomynous Var1,
+    Var2;  // "struct Anomynous" 형의 변수 Var1 , Var2 를 정의한다.
+---------------------------------------------------------------
+
+구조체 변수를 정의하는 방법 중 전역 변수로 선언하는 방법
+
+#include <stdio.h>
+
+char copy_str(char *dest, char *src);
+
+int Print_Obj_Status(struct obj OBJ);
+
+struct obj {	// sturct obj 라는 구조체를 정의하였고
+		// 멤버는 아래와 같다.
+  char name[20];
+  int x, y;
+} Ball; 	// sturct obj 형의 Ball 이란 구조체 변수를 정의하며, 전역 변수
+
+int main() {
+  Ball.x = 3;
+  Ball.y = 4;
+  copy_str(Ball.name, "RED BALL");
+
+  Print_Obj_Status(Ball);
+
+  return 0;
+}
+int Print_Obj_Status(struct obj OBJ) {
+  printf("Location of %s \n", OBJ.name);
+  printf("( %d , %d ) \n", OBJ.x, OBJ.y);
+
+  return 0;
+}
+char copy_str(char *dest, char *src) {
+  while (*src) {
+    *dest = *src;
+    src++;
+    dest++;
+  }
+
+  *dest = '\0';
+
+  return 1;
+}
+
