@@ -1,0 +1,55 @@
+<열거형을 switch에 활용하기>
+
+- 열거형은 switch 분기문을 사용할 때 유용하다.
+-----------------
+switch (열거형변수)
+{
+case 열거형값:
+    실행할코드;
+    break;
+}
+-----------------
+
+- 예를 들어 게임을 만든다고 하면 캐릭터의 스킬을 열거형으로 정의할 수 있다. 아래 내용 참고
+-----------------
+#include <stdio.h>
+
+enum LuxSkill {
+    LightBinding = 1,
+    PrismaticBarrier,
+    LucentSingularity,
+    FinalSpark
+};
+
+int main()
+{
+    enum LuxSkill skill;    // 열거형 변수 선언
+
+    skill = LightBinding;    // 열거형 값 할당
+
+    switch (skill)
+    {
+    case LightBinding:         // 열거형 값이 LightBinding일 때
+        printf("LightBinding\n");
+        break;
+    case PrismaticBarrier:     // 열거형 값이 PrismaticBarrier일 때
+        printf("PrismaticBarrier\n");
+        break;
+    case LucentSingularity:    // 열거형 값이 LucentSingularity일 때
+        printf("LucentSingularity\n");
+        break;
+    case FinalSpark:           // 열거형 값이 FinalSpark일 때
+        printf("FinalSpark\n");
+        break;
+    default:
+        break;
+    }
+
+    return 0;
+}
+-----------------
+
+- 열거형 변수를 switch 분기문에 사용하면 열거형 값에 따라 코드를 실행할 수 있다. 
+- 만약 스킬을 1, 2, 3, 4 번호로 외워야 한다면 상당히 갑갑하겠죠? 이때 열거형을 사용하여 LightBinding, 
+  PrismaticBarrier, LucentSingularity, FinalSpark와 같이 스킬 이름으로 처리하면 된다.
+
