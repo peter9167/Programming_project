@@ -12,3 +12,5 @@ int main() {
   printf("str : %p \n", str);
   printf("arr : %p \n", arr);
 }
+
+
