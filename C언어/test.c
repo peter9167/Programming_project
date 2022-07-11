@@ -1,37 +1,23 @@
 #include <stdio.h>
-#include <string.h>
 
-typedef struct _Health {
-  /* 이름 */
-  char name[5];
-  /* 키 */
-  int height;
-  /* 몸무게 */
-  double weight;
-} Health;
+typedef struct
+{
+    char name[20];
+    int a, b, c;
+}Result;
 
-void strsort(char* h);
 
 int main()
 {
-    Health h[5];
-    int i, j;
-    char tmp[5];
-    for(i = 0; i < 5; i++)
-    	scanf("%s %d %lf", h[i].name, &h[i].height, &h[i].weight);
+    Result r;
+    int x;
+    float y;
     
-    for (i = 0; i < 5; i++) {
-	    for (j = 0; j < 5 - 1 - i; j++) {
-	        if (strcmp(h[j].name, h[j + 1].name) > 0) {
-	            tmp[j] = *h[j].name;
-	            *h[j].name = *h[j + 1].name;
-	            *h[j + 1].name = tmp[i];
-	        }
-	    }
-	}
+	scanf("%d %f %d %f", &f.x, &f.y, &f.x2, &f.y2);
     
-    printf("name\n");
-    for(i = 0; i < 5; i++)
-    	printf("%s %d %.1f\n", h[i].name, h[i].height, h[i].weight);
+    x = ((f.x + f.x2) / 2) + 5;
+    y = ((f.y + f.y2) / 2) - 4.5;
+    
+    printf("height : %dcm\n", x);
+    printf("weight : %.1fkg\n", y);
 }
-
