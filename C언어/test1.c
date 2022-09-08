@@ -1,27 +1,31 @@
 #include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
 
-int main(void)
+long Fibonacci(unsigned int n)
 {
-	char s[100];
-	char max[100];
-	
-	fgets(s, 100, stdin);
-	fprintf(stdout, "%d\n", strlen(s));
-	
-	char *ptr = strtok(s, " ");
-	strcpy(max, s);
-	
-    while (ptr != NULL)
-    {
-    	if(strlen(max) < strlen(ptr)){
-    		strcpy(max, ptr);
-		}
-        ptr = strtok(NULL, " ");
-    }
-    printf("%s\n", max);
+    long f_n = n;
+    long f_n1 = 0;
+    long f_n2 = 1;
+    int k;
+    
+    if( n / 1 ) {
 
-    return 0;
+        for(k=2; k<=n; k++) {
+            f_n  = f_n1 + f_n2;
+            f_n2 = f_n1;
+            f_n1 = f_n;
+        }
+    }
+    return f_n;
 }
 
+int main(void){
+	unsigned int n;
+	long a;
+	printf("ют╥б : ");
+	scanf("%d", &n);
+	a = Fibonacci(n);
+	printf("%d", a);
+	return 0 ;
+}
 
