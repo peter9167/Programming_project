@@ -1,11 +1,13 @@
 import cv2
-import matplotlib.pyplot as plt
 
 img_basic = cv2.imread('cat.jpg', cv2.IMREAD_COLOR)
-plt.imshow(cv2.cvtColor(img_basic, cv2.COLOR_BGR2RGB))
+cv2.imshow('Image Basic', img_basic)
 cv2.waitKey(0)
-plt.show()
+cv2.imwrite('result1.png', img_basic)
 
-img_basic = cv2.cvtColor(img_basic, cv2.COLOR_BGR2GRAY)
-plt.imshow(cv2.cvtColor(img_basic, cv2.COLOR_GRAY2RGB))
-plt.show()
+cv2.destroyAllWindows()
+
+img_gray = cv2.cvtColor(img_basic, cv2.COLOR_BGR2GRAY)
+cv2.imshow('Image Gray', img_gray)
+cv2.waitKey(0)
+cv2.imwrite('result2.png', img_basic)
