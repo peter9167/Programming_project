@@ -15,6 +15,14 @@ def nothing(x):
 
 
 def mouse_callback(event, x, y, flags, param):
+    '''
+    :param event: 윈도우에서 발생하는 이벤트 의미
+    :param x: 마우스의 x 좌표
+    :param y: 마우스의 y 좌표
+    :param flags: event와 함께 활용되는 특수한 상태 확인 용도
+    :param param:
+    :return:
+    '''
     global hsv, lower_blue1, upper_blue1, lower_blue2, upper_blue2, lower_blue3, upper_blue3, threshold
 
     # 마우스 왼쪽 버튼 누를시 위치에 있는 픽셀값을 읽어와서 HSV로 변환합니다.
@@ -67,8 +75,8 @@ def mouse_callback(event, x, y, flags, param):
         print("@3", lower_blue3, "~", upper_blue3)
 
 
-cv.namedWindow('img_color')
-cv.setMouseCallback('img_color', mouse_callback)
+cv.namedWindow('img_color') # img_color 라는 이름을 갖는 윈도우(창) 생성
+cv.setMouseCallback('img_color', mouse_callback) # img_color 윈도우(창)에서 마우스 이벤트 발생 시 mouse_callback 함수 호출
 
 cv.namedWindow('img_result')
 cv.createTrackbar('threshold', 'img_result', 0, 255, nothing)
