@@ -20,8 +20,7 @@ def mouse_callback(event, x, y, flags, param):
     :param x: 마우스의 x 좌표
     :param y: 마우스의 y 좌표
     :param flags: event와 함께 활용되는 특수한 상태 확인 용도
-    :param param:
-    :return:
+    :param param: 마우스 콜백 설정 함수에서 함께 전달되는 사용자 정의 데이터를 의미
     '''
     global hsv, lower_blue1, upper_blue1, lower_blue2, upper_blue2, lower_blue3, upper_blue3, threshold
 
@@ -84,7 +83,7 @@ cv.setTrackbarPos('threshold', 'img_result', 30)
 
 cap = cv.VideoCapture(0)
 
-while (True):
+while True:
     # img_color = cv.imread('2.jpg')
     ret, img_color = cap.read()
     height, width = img_color.shape[:2]
