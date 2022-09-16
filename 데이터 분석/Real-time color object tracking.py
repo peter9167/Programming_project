@@ -77,8 +77,9 @@ def mouse_callback(event, x, y, flags, param):
 cv.namedWindow('img_color') # img_color 라는 이름을 갖는 윈도우(창) 생성
 cv.setMouseCallback('img_color', mouse_callback) # img_color 윈도우(창)에서 마우스 이벤트 발생 시 mouse_callback 함수 호출
 
-cv.namedWindow('img_result')
-cv.createTrackbar('threshold', 'img_result', 0, 255, nothing)
+cv.namedWindow('img_result') # img_result 라는 이름을 갖는 윈도우(창) 생성
+cv.createTrackbar('threshold', 'img_result', 0, 255, nothing)   # cv2.createTrackbar("트랙 바 이름", "윈도우 창 제목", 최솟값, 최댓값, 콜백 함수)
+                                                                # 트랙 바란 스크롤 바의 하나로, 슬라이더 바의 형태
 cv.setTrackbarPos('threshold', 'img_result', 30)
 
 cap = cv.VideoCapture(0)
