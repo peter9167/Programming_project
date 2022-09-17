@@ -3,7 +3,7 @@ double fabs( double x )
 double ceil( double x )
 - x보다 작지 않은 최소 크기의 정수를 반환합니다.
 double floor( double x )
-- x보다 크지 않은 최대크기의 정수를 반환합니다.
+- x보다 크지 않은 최대크기의 정수를 반환합니다. 
 double exp( double x )
 - 무리수 e의 x제곱을 반환합니다.
 double pow( double x, double y )
