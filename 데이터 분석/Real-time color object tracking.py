@@ -85,8 +85,8 @@ cv.setTrackbarPos('threshold', 'img_result', 30)
 cap = cv.VideoCapture(0)
 
 while True:
-    # img_color = cv.imread('2.jpg')
-    ret, img_color = cap.read()
+    img_color = cv.imread('platest.jpg')
+    #ret, img_color = cap.read()
     height, width = img_color.shape[:2]
     img_color = cv.resize(img_color, (width, height), interpolation=cv.INTER_AREA)
 
