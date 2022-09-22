@@ -1,0 +1,17 @@
+opencv linux or raspberry 설치
+
+- 여러 패키지를 설치해서 될 수 있었는지 확실하지 않아 되지 않으면 해야할 패키지 작성
+
+sudo apt-get install python3-opencv
+sudo apt-get install python3-dev python3-pip
+sudo pip3 install -U numpy
+sudo pip3 install opencv-python
+
+----상기 명령어로 동작하지 않을 때
+sudo apt-get -y git python3-pip
+
+sudo pip3 install --upgrade adafruit-python-shell click
+
+sudo apt install opencv-contrib-python
+
+

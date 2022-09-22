@@ -80,13 +80,13 @@ cv.setMouseCallback('img_color', mouse_callback) # img_color 윈도우(창)에�
 cv.namedWindow('img_result') # img_result 라는 이름을 갖는 윈도우(창) 생성
 cv.createTrackbar('threshold', 'img_result', 0, 255, nothing)   # cv2.createTrackbar("트랙 바 이름", "윈도우 창 제목", 최솟값, 최댓값, 콜백 함수)
                                                                 # 트랙 바란 스크롤 바의 하나로, 슬라이더 바의 형태
-cv.setTrackbarPos('threshold', 'img_result', 30)
+cv.setTrackbarPos('threshold', 'img_result', 30)        # cv2.setTrackbarPos("트랙 바 이름", "윈도우 창 제목", 설정값)
 
 cap = cv.VideoCapture(0)
 
 while True:
-    img_color = cv.imread('platest.jpg')
-    #ret, img_color = cap.read()
+    # img_color = cv.imread('2.jpg')
+    ret, img_color = cap.read()
     height, width = img_color.shape[:2]
     img_color = cv.resize(img_color, (width, height), interpolation=cv.INTER_AREA)
 
