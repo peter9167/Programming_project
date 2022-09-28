@@ -11,7 +11,7 @@ def setLabel(img, pts, label):
     cv2.putText(img, label, pt1, cv2.FONT_HERSHEY_PLAIN, 1, (0, 0, 255))
     
 def main():
-    img = cv2.imread('platest.jpg', cv2.IMREAD_COLOR)
+    img = cv2.imread('6 (4).png', cv2.IMREAD_COLOR)
     
     if img is None:
         print('Image load failed!')
